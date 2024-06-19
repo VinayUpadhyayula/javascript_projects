@@ -1,0 +1,41 @@
+.keys{
+    
+    background-image: url('../images/drums.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width:100%;
+    height:100vh;
+    display: flex;
+    align-items: center;
+}
+.key{
+    border : 4px solid black; /*border for each element of div*/
+    border-radius: 5px; /*gives radius on all sides for each element of div*/
+    margin : 1rem; /*gap between each element of div*/
+    font-size: 1.5rem;
+    padding: 1rem .5rem; /*gap between each div container and the contents inside it*/
+    width: 100px;
+    text-align: center; /*align text elements to the center of the div container*/
+    color: white;
+   background: rgba(0, 0, 0, 0.4);
+   transition: all 0.07s;
+   text-shadow: 0 0 5px black;
+}
+.playing
+{
+    transform: scale(2);
+    border-color: brown;
+    box-shadow: 0 0 10px brown;
+}
+kbd{
+    display: block;
+    font-size: 40px;
+}
+.sound
+{
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: brown;
+}
