@@ -1,0 +1,48 @@
+<html lang = "en">
+    <head>
+        <title>CSS Controls using JS</title>
+    </head>
+    <body>
+        <h1>Update CSS Variables with <span class = "hl">JS</span></h1>
+        <div>
+            <label for="spacing">Spacing: </label>
+            <input type = "range" name = "spacing" min = "10" max = "200" value = "10" data-sizing="px"/>
+            <label for="blur">Blur: </label>
+            <input type = "range" name = "blur" min = "0" max = "25" value = "10" data-sizing="px"/>
+            <label for="base">Blur: </label>
+            <input type = "color" name = "base" value = "#ffc600"/>
+        </div>
+        <img src = "./art_museum.jpeg">
+        <style>
+            :root{
+                --base :#ffc600;
+                --spacing : 10px;
+                --blur: 10px;
+            }
+            img{
+                padding : var(--spacing);
+                background: var(--base);
+                filter : blur(var(--blur));
+                width: 95%;
+                height: 100vh;
+            }
+            .hl
+            {
+                color: var(--base);
+            }
+            body{
+                background-color: burlywood;
+                background-size: cover;
+            }
+        </style>
+        <script>
+            const inputs = document.querySelectorAll("input");
+            function handleInput(){
+                const suffix = this.dataset.sizing || '';
+                document.documentElement.style.setProperty(`--${this.name}`,this.value+suffix);
+                console.log(suffix);
+            }
+            inputs.forEach(input =>input.addEventListener('change',handleInput));
+        </script>
+    </body>
+</html>
